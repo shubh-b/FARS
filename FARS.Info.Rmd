@@ -1,0 +1,58 @@
+---
+title: "FARS Info"
+author: "SUBHABRATA"
+date: "31 May 2017"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+# R Package 'FARS'
+
+FARS is a purpose specific R package for analyzing data from the US National Highway traffic Safety Administration's Fatality Analysis Reporting System. The functions in this package generate month wise list of accidents in a year and create geographical plots of the states in US as well according to the number of accidents.
+
+## Functions in Package 'FARS'
+
+### `fars_read()`
+
+This function reads the input data frame. Firstly it checks whether the data exists in the specified directory or NOT. If the data exists, then it is printed out in Tibble format along with the variable names.
+
+#### Usage
+`fars_read("accident_2013.csv.bz2")`;
+`fars_read("accident_2015.csv")`
+
+
+### `make_filename()`
+This function creates individual file names for each data frame with .csv format in the specified directory corresponding to a year.
+
+#### Usage
+`make_filename(2013)`;
+`make_filename(2014)`
+
+
+### `fars_read_years()`
+This function provides a list of occurances (accidents) in a year. For every occurance it adds a row in this list and records the corresponding MONTH and year in that list for that particular occurance.
+
+#### Usage
+`fars_read_years(2013)`;
+`fars_read_years(c(2013,2015))`
+
+
+### `fars_summarize_years()`
+
+This function calculates the total number of accidents happened in a MONTH within a year. It yields a dataframe and prints a Tibble format of the output.
+
+#### Usage
+`fars_summarize_years(2015)`;
+`fars_summarize_years(c(2013,2015))`
+
+
+### `fars_map_state()`
+
+This function shows a geographical plot of 'dots' according to number of accidents in a state within a year. This function takes the state number and the year as the inputs, according to the data set in the specified root directory.
+
+#### Usage
+`fars_map_state(1,2015)`;
+`fars_map_state(56,2013)`

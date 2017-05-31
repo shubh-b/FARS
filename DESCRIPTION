@@ -1,0 +1,20 @@
+Package: FARS
+Type: Package
+Title: A Package for analyzing data from Fatality Analysis Reporting System
+Version: 0.1.0
+Date: 2017-05-31
+Author: SUBHABRATA
+Maintainer: SUBHABRATA <subhabrata.patra@merittrac.com>
+Description: Provides a purpose specific tool for analysing data from the US National 
+    Highway Traffic Safety Administration's Fatality Analysis Reporting System. The 
+    functions in this package generate month wise list of accidents in a year and create 
+    geographical plots of the states in US according to the number of accidents.
+Depends: R (>= 3.1.2)
+Imports: dplyr, tidyr, readr, maps, graphics, stats
+License: GPL
+VignetteBuilder: knitr
+Suggests: knitr,
+    testthat
+Encoding: UTF-8
+LazyData: true
+RoxygenNote: 6.0.1
